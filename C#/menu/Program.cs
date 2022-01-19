@@ -26,24 +26,30 @@ while(repeat)
         int amount = Convert.ToInt32(Console.ReadLine());
         if (amount != 0)
         {
-            Console.WriteLine("You have ordered "+amount +" big mac(s) for $"+ bigmac +" each!");
+            Console.WriteLine("You have ordered "+ amount +" big mac(s) for $"+ bigmac +" each!");
+            macAmnts = macAmnts + amount;
+            
+            ordered = true;
+            balance = balance + (bigmac * amount);
+        } else
+        {
+            Console.WriteLine("You can't order "+ amount +" big macs!");
         }
-
-        macAmnts = macAmnts + amount;
-        ordered = true;
-        balance = balance + (bigmac * amount);
     } else if (option == "2")
     {
-         Console.WriteLine("How many would you like to order?");
+        Console.WriteLine("How many would you like to order?");
         int amount = Convert.ToInt32(Console.ReadLine());
         if (amount != 0)
         {
-            Console.WriteLine("You have ordered "+amount +" beyond burger(s) for $"+ beyondburger +" each!");
-        }
-        beyondAmnts = beyondAmnts + amount;
+            Console.WriteLine("You have ordered "+ amount +" beyond burger(s) for $"+ beyondburger +" each!");
+            beyondAmnts = beyondAmnts + amount;
 
-        ordered = true;
-        balance = balance + (beyondburger * amount);
+            ordered = true;
+            balance = balance + (beyondburger * amount);
+        } else
+        {
+            Console.WriteLine("You can't order "+ amount +" beyond burgers!");
+        }
     } else if (option == "3")
     {
         if (ordered == false)
