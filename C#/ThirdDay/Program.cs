@@ -145,6 +145,7 @@ class Program
                 Console.WriteLine("Thanks for visiting!");
                 repeat = false;
                 user.saveFile();
+                
             //Invalid input command
             } else
             {

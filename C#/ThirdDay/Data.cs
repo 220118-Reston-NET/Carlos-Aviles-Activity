@@ -5,6 +5,9 @@ namespace DataFunction
     public class Data
     {
 
+        /*
+         * The file location.
+         */
         private String _filepath = "./db/Mcdonalds.json";
 
         /*
@@ -136,6 +139,8 @@ namespace DataFunction
         {
             string jsonString = JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(_filepath, jsonString);
+            Console.WriteLine("Saving file...");
+            Console.WriteLine(jsonString);
         }
 
         /*
@@ -148,6 +153,9 @@ namespace DataFunction
             _cash = newUser._cash;
             _balance = newUser._balance;
             AmountOrdered = newUser.AmountOrdered;
+
+            Console.WriteLine("Loaded old user file...");
+            Console.WriteLine(jsonString);
         }
     }
 }
