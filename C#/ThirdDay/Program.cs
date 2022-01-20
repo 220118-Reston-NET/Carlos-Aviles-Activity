@@ -43,9 +43,7 @@ class Program
                 if (amount != 0)
                 {
                     Console.WriteLine("You have ordered "+ amount +" big mac(s) for $"+ Data.BIG_MAC_COST +" each!");
-                    user._amountOrdered[0] = user._amountOrdered[0] + amount;
-
-                    user._balance = user._balance + (Data.BIG_MAC_COST * amount);
+                    user.addBigMac(amount);
                 } else
                 {
                     Console.WriteLine("You can't order "+ amount +" big macs!");
@@ -57,9 +55,7 @@ class Program
                 if (amount != 0)
                 {
                     Console.WriteLine("You have ordered "+ amount +" beyond burger(s) for $"+ Data.BEYOND_COST +" each!");
-                    user._amountOrdered[1] = user._amountOrdered[1] + amount;
-
-                    user._balance = user._balance + (Data.BIG_MAC_COST * amount);
+                    user.addBeyond(amount);
                 } else
                 {
                     Console.WriteLine("You can't order "+ amount +" beyond burgers!");

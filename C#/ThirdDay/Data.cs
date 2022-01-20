@@ -53,6 +53,24 @@ namespace DataFunction
         }
 
         /*
+        * Adds a specified amount of big macs to the cart.
+        */
+        public void addBigMac(int amount)
+        {
+            user._amountOrdered[1] = user._amountOrdered[1] + amount;
+            user._balance = user._balance + (Data.BIG_MAC_COST * amount);
+        }
+
+        /*
+        * Adds a specified amount of beyond burgers to the cart.
+        */
+        public void addBeyond(int amount)
+        {
+            user._amountOrdered[1] = user._amountOrdered[1] + amount;
+            user._balance = user._balance + (Data.BEYOND_COST * amount);
+        }
+
+        /*
          * Remove a single big mac from the cart.
          */
         public void removeBigMac()
@@ -70,6 +88,9 @@ namespace DataFunction
             Console.WriteLine("You now have "+ _amountOrdered[0] +" Beyond Burger(s) in your cart.");
         }
 
+        /*
+         * A flag that checks if the user has ordered anything.
+         */
         public bool hasOrdered()
         {
             if (_amountOrdered[0] == 0 || _amountOrdered[1] == 0)
