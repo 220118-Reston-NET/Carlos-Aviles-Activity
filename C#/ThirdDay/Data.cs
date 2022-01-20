@@ -57,7 +57,7 @@ namespace DataFunction
         */
         public void addBigMac(int amount)
         {
-            _amountOrdered[0] = _amountOrdered[1] + amount;
+            _amountOrdered[0] = _amountOrdered[0] + amount;
             _balance = _balance + (Data.BIG_MAC_COST * amount);
         }
 
@@ -84,7 +84,7 @@ namespace DataFunction
          */
         public void removeBeyond()
         {
-            _amountOrdered[0] = _amountOrdered[0] - 1;
+            _amountOrdered[1] = _amountOrdered[1] - 1;
             Console.WriteLine("You now have "+ _amountOrdered[0] +" Beyond Burger(s) in your cart.");
         }
 
