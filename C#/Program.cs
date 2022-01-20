@@ -40,3 +40,6 @@
 //         repeat = false;
 //     }
 // }
+
+using ConversionFunction;
+Conversions.main();

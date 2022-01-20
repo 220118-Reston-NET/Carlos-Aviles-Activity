@@ -1,9 +1,14 @@
+using System.Collections;
+
 namespace CollectionFunction
 {
     public class Collections
     {
         //Array function
         private int[] _nums = new int[5];
+
+        //Non-Generic collection
+        private ArrayList _nonGeneric = new ArrayList();
 
         //Generic collection
 
@@ -55,6 +60,13 @@ namespace CollectionFunction
              directory.Add("Jonathan", -10);
 
              Console.WriteLine(directory["Carlos"]);
+
+            Console.WriteLine("Non-Generic collection");
+            _nonGeneric.Add(10);
+            _nonGeneric.Add(true);
+            _nonGeneric.Add(1.20);
+
+            strings[0].ToUpper();
         }
     }
 }
