@@ -15,6 +15,21 @@ class Program
     private bool repeat = true;
 
     /*
+     * Print the main menu screen.
+     */
+    void printMainMenu()
+    {
+        Console.WriteLine();
+        Console.WriteLine("Welcome to Mcdonald's");
+        Console.WriteLine("Pick an option");
+        Console.WriteLine("[1] Order a big mac");
+        Console.WriteLine("[2] Order a beyond burger");
+        Console.WriteLine("[3] Pay for order");
+        Console.WriteLine("[4] Remove an order");
+        Console.WriteLine("[5] Exit");
+    }
+
+    /*
      * Initialize the console app logic.
      */
     void start()
@@ -24,14 +39,7 @@ class Program
 
         while(repeat)
         {
-            Console.WriteLine();
-            Console.WriteLine("Welcome to Mcdonald's");
-            Console.WriteLine("Pick an option");
-            Console.WriteLine("[1] Order a big mac");
-            Console.WriteLine("[2] Order a beyond burger");
-            Console.WriteLine("[3] Pay for order");
-            Console.WriteLine("[4] Remove an order");
-            Console.WriteLine("[5] Exit");
+            printMainMenu();
 
             int option = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
@@ -62,7 +70,7 @@ class Program
                 }
             } else if (option == 3)
             {
-                if (user.hasOrdered() == false)
+                if (user.hasOrdered(0) == false && user.hasOrdered(1) == false)
                 {
                     Console.WriteLine("You haven't ordered anything!");
                 }
@@ -78,7 +86,7 @@ class Program
                 }
             }else if (option == 4)
             {
-                if (user.hasOrdered() == false)
+                if (user.hasOrdered(0) == false && user.hasOrdered(1) == false)
                 {
                     Console.WriteLine("You haven't ordered anything!");
                 } else
@@ -89,6 +97,7 @@ class Program
                     Console.WriteLine("Which one would you like to remove?");
                     Console.WriteLine("[1] Remove a Big Mac");
                     Console.WriteLine("[2] Remove a Beyond Burger");
+                    Console.WriteLine("[3] Go back to main menu");
 
                     int pick = Convert.ToInt32(Console.ReadLine());
                     if (pick == 1)
@@ -111,6 +120,9 @@ class Program
                         {
                             user.removeBeyond();
                         }
+                    } else if (pick == 3)
+                    {
+                        printMainMenu();
                     }
                 }
             } else if (option == 5)

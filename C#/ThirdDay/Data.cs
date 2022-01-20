@@ -57,7 +57,7 @@ namespace DataFunction
         */
         public void addBigMac(int amount)
         {
-            _amountOrdered[1] = _amountOrdered[1] + amount;
+            _amountOrdered[0] = _amountOrdered[1] + amount;
             _balance = _balance + (Data.BIG_MAC_COST * amount);
         }
 
@@ -89,11 +89,11 @@ namespace DataFunction
         }
 
         /*
-         * A flag that checks if the user has ordered anything.
+         * A flag that checks if the user has ordered a specific item.
          */
-        public bool hasOrdered()
+        public bool hasOrdered(int index)
         {
-            if (_amountOrdered[0] == 0 || _amountOrdered[1] == 0)
+            if (_amountOrdered[index] == 0)
             {
                 return false;
             }
