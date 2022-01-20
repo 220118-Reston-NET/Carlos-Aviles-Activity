@@ -45,6 +45,7 @@ class Program
             int option = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
 
+            //Option 1: Order a big mac
             if (option == 1)
             {
                 Console.WriteLine("How many would you like to order?");
@@ -57,6 +58,8 @@ class Program
                 {
                     Console.WriteLine("You can't order "+ amount +" big macs!");
                 }
+
+            //option 2: order a beyond burger
             } else if (option == 2)
             {
                 Console.WriteLine("How many would you like to order?");
@@ -69,6 +72,8 @@ class Program
                 {
                     Console.WriteLine("You can't order "+ amount +" beyond burgers!");
                 }
+
+            //option 3: pay for order
             } else if (option == 3)
             {
                 if (user.hasOrdered(0) == false && user.hasOrdered(1) == false)
@@ -85,7 +90,9 @@ class Program
                     Console.WriteLine("You now have $"+ user._cash +" left.");
                     user.reset();
                 }
-            }else if (option == 4)
+
+            //option 3: Remove an item
+            } else if (option == 4)
             {
                 if (user.hasOrdered(0) == false && user.hasOrdered(1) == false)
                 {
@@ -124,15 +131,21 @@ class Program
                         printMainMenu();
                     }
                 }
+            
+            //option 5: Display cart items
             } else if (option == 5)
             {
                 user.printCart();
                 Console.WriteLine("The total cost is $"+ user.getTotalCost() +"!");
                 Console.WriteLine("You have $"+ user._cash +" cash in your wallet.");
+            
+            //option 6: exit out of program
             } else if (option == 6)
             {
                 Console.WriteLine("Thanks for visiting!");
                 repeat = false;
+            
+            //Invalid input command
             } else
             {
                 Console.WriteLine("Invalid input!");
