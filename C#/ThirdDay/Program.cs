@@ -88,7 +88,7 @@ class Program
                     user._cash = user._cash - user._balance;
                     Console.WriteLine("You have spent $"+ user._balance +" for this order.");
                     Console.WriteLine("You now have $"+ user._cash +" left.");
-                    user.reset();
+                    user.saveFile();
                 }
 
             //option 3: Remove an item
@@ -144,7 +144,7 @@ class Program
             {
                 Console.WriteLine("Thanks for visiting!");
                 repeat = false;
-            
+                user.saveFile();
             //Invalid input command
             } else
             {

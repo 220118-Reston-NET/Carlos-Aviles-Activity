@@ -1,7 +1,11 @@
+using System.Text.Json;
+
 namespace DataFunction
 {
     public class Data
     {
+
+        private String _filepath = "./db/Mcdonalds.json";
 
         /*
          * Represents the cost of a big mac.
@@ -27,14 +31,21 @@ namespace DataFunction
          * An array that stores how many burgers a user has ordered.
          */
         public int[] _amountOrdered = new int[2];
+
+        public int[] AmountOrdered
+        {
+            get { return _amountOrdered; }
+            set { _amountOrdered = value; }
+        }
     
         /*
          * Initalize all needed variables.
          */
         public void init()
         {
-            _cash = 60;
-            _balance = 0;
+            //_cash = 60;
+            //_balance = 0;
+            loadFile();
             
             //0 = big macs ordred
             //1 = beyond burgers ordered
@@ -116,6 +127,27 @@ namespace DataFunction
         public int getTotalCost()
         {
             return (_amountOrdered[0] * BIG_MAC_COST) + (_amountOrdered[1] * BEYOND_COST);
+        }
+
+        /*
+         * Save the user data onto a file.
+         */
+        public void saveFile()
+        {
+            string jsonString = JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(_filepath, jsonString);
+        }
+
+        /*
+         * Load the user data from a file.
+         */
+        public void loadFile()
+        {
+            string jsonString = File.ReadAllText(_filepath);
+            Data newUser = JsonSerializer.Deserialize<Data>(jsonString);
+            _cash = newUser._cash;
+            _balance = newUser._balance;
+            AmountOrdered = newUser.AmountOrdered;
         }
     }
 }
