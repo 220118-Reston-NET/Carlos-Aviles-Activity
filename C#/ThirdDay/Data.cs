@@ -49,8 +49,8 @@ namespace DataFunction
             
             //0 = big macs ordred
             //1 = beyond burgers ordered
-            _amountOrdered[0] = 0;
-            _amountOrdered[1] = 0;
+            //_amountOrdered[0] = 0;
+            //_amountOrdered[1] = 0;
         }
 
         /*

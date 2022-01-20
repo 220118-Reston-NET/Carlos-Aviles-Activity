@@ -1,8 +1,8 @@
 {
-  "_cash": 300,
-  "_balance": 0,
+  "_cash": 0,
+  "_balance": 700,
   "AmountOrdered": [
     0,
-    0
+    100
   ]
 }
