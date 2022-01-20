@@ -14,11 +14,6 @@ namespace DataFunction
         public static int BEYOND_COST = 7;
 
         /*
-         * Represents if the user has ordered anything.
-         */
-        public bool _ordered { get; set; }
-
-        /*
          * Represents the amount of cash the user has.
          */
         public int _cash { get; set; }
@@ -38,7 +33,6 @@ namespace DataFunction
          */
         public void init()
         {
-            _ordered = false;
             _cash = 60;
             _balance = 0;
             
@@ -56,7 +50,6 @@ namespace DataFunction
             _amountOrdered[0] = 0;
             _amountOrdered[1] = 0;
             _balance = 0;
-            _ordered = false;
         }
 
         /*
@@ -75,6 +68,15 @@ namespace DataFunction
         {
             _amountOrdered[0] = _amountOrdered[0] - 1;
             Console.WriteLine("You now have "+ _amountOrdered[0] +" Beyond Burger(s) in your cart.");
+        }
+
+        public bool hasOrdered()
+        {
+            if (_amountOrdered[0] == 0 || _amountOrdered[1] == 0)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -4,12 +4,22 @@ using System;
 class Program
 {
 
+    /*
+     * Represents the Data class instance.
+     */
     private Data user = new Data();
 
+    /*
+     * The while loop flag.
+     */
     private bool repeat = true;
 
+    /*
+     * Initialize the console app logic.
+     */
     void start()
     {
+        // Initialize the data.
         user.init();
 
         while(repeat)
@@ -34,7 +44,6 @@ class Program
                 {
                     Console.WriteLine("You have ordered "+ amount +" big mac(s) for $"+ Data.BIG_MAC_COST +" each!");
                     user._amountOrdered[0] = user._amountOrdered[0] + amount;
-                    user._ordered = true;
 
                     user._balance = user._balance + (Data.BIG_MAC_COST * amount);
                 } else
@@ -49,7 +58,6 @@ class Program
                 {
                     Console.WriteLine("You have ordered "+ amount +" beyond burger(s) for $"+ Data.BEYOND_COST +" each!");
                     user._amountOrdered[1] = user._amountOrdered[1] + amount;
-                    user._ordered = true;
 
                     user._balance = user._balance + (Data.BIG_MAC_COST * amount);
                 } else
@@ -58,7 +66,7 @@ class Program
                 }
             } else if (option == 3)
             {
-                if (user._ordered == false)
+                if (user.hasOrdered() == false)
                 {
                     Console.WriteLine("You haven't ordered anything!");
                 }
@@ -74,7 +82,7 @@ class Program
                 }
             }else if (option == 4)
             {
-                if (user._ordered == false)
+                if (user.hasOrdered() == false)
                 {
                     Console.WriteLine("You haven't ordered anything!");
                 } else
