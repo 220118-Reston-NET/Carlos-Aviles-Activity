@@ -85,7 +85,7 @@ namespace DataFunction
         public void removeBeyond()
         {
             _amountOrdered[1] = _amountOrdered[1] - 1;
-            Console.WriteLine("You now have "+ _amountOrdered[0] +" Beyond Burger(s) in your cart.");
+            Console.WriteLine("You now have "+ _amountOrdered[1] +" Beyond Burger(s) in your cart.");
         }
 
         /*
@@ -98,6 +98,24 @@ namespace DataFunction
                 return false;
             }
             return true;
+        }
+
+        /*
+         * Displays the items in the cart.
+         */
+        public void printCart()
+        {
+            Console.WriteLine("You have ordered "+ _amountOrdered[0] +" Big Mac(s)");
+            Console.WriteLine("You have ordered "+ _amountOrdered[1] +" Beyond Burger(s)");
+            Console.WriteLine();
+        }
+
+        /*
+         * Gets the total costs of the items in the cart.
+         */
+        public int getTotalCost()
+        {
+            return (_amountOrdered[0] * BIG_MAC_COST) + (_amountOrdered[1] * BEYOND_COST);
         }
     }
 }

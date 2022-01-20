@@ -26,7 +26,8 @@ class Program
         Console.WriteLine("[2] Order a beyond burger");
         Console.WriteLine("[3] Pay for order");
         Console.WriteLine("[4] Remove an order");
-        Console.WriteLine("[5] Exit");
+        Console.WriteLine("[5] Display cart");
+        Console.WriteLine("[6] Exit");
     }
 
     /*
@@ -74,7 +75,7 @@ class Program
                 {
                     Console.WriteLine("You haven't ordered anything!");
                 }
-                else if (user._cash <= user._balance)
+                else if (user._cash < user._balance)
                 {
                     Console.WriteLine("You don't have the cash to make the purchase!");
                 } else
@@ -91,9 +92,7 @@ class Program
                     Console.WriteLine("You haven't ordered anything!");
                 } else
                 {
-                    Console.WriteLine("You have ordered "+ user._amountOrdered[0] +" Big Mac(s)");
-                    Console.WriteLine("You have ordered "+ user._amountOrdered[1] +" Beyond Burger(s)");
-                    Console.WriteLine();
+                    user.printCart();
                     Console.WriteLine("Which one would you like to remove?");
                     Console.WriteLine("[1] Remove a Big Mac");
                     Console.WriteLine("[2] Remove a Beyond Burger");
@@ -126,6 +125,11 @@ class Program
                     }
                 }
             } else if (option == 5)
+            {
+                user.printCart();
+                Console.WriteLine("The total cost is $"+ user.getTotalCost() +"!");
+                Console.WriteLine("You have $"+ user._cash +" cash in your wallet.");
+            } else if (option == 6)
             {
                 Console.WriteLine("Thanks for visiting!");
                 repeat = false;
