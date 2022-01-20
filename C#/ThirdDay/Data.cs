@@ -57,8 +57,8 @@ namespace DataFunction
         */
         public void addBigMac(int amount)
         {
-            user._amountOrdered[1] = user._amountOrdered[1] + amount;
-            user._balance = user._balance + (Data.BIG_MAC_COST * amount);
+            _amountOrdered[1] = _amountOrdered[1] + amount;
+            _balance = _balance + (Data.BIG_MAC_COST * amount);
         }
 
         /*
@@ -66,8 +66,8 @@ namespace DataFunction
         */
         public void addBeyond(int amount)
         {
-            user._amountOrdered[1] = user._amountOrdered[1] + amount;
-            user._balance = user._balance + (Data.BEYOND_COST * amount);
+            _amountOrdered[1] = _amountOrdered[1] + amount;
+            _balance = _balance + (Data.BEYOND_COST * amount);
         }
 
         /*
