@@ -46,7 +46,6 @@
             }
         }
         
-
         public Pokemon()
         {
             Name = "Ditto";
